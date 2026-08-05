@@ -1,0 +1,12 @@
+name: Terraform CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  tf-test:
+    uses: ZhangMaKe/workflow-library/.github/workflows/terraform-test.yml@main
+    with:
+      scan-ref: '.'
