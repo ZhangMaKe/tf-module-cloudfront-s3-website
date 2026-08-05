@@ -18,3 +18,8 @@ output "cloudfront_distribution_domain_name" {
   description = "The domain name of the CloudFront distribution for the website"
   value       = aws_cloudfront_distribution.s3_website_distribution.domain_name
 }
+
+output "s3_bucket_website_endpoint" {
+  description = "The endpoint hosting the website on S3"
+  value       = aws_s3_bucket_website_configuration.website.website_endpoint
+}
