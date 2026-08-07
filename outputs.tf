@@ -21,5 +21,5 @@ output "cloudfront_distribution_domain_name" {
 
 output "s3_bucket_website_endpoint" {
   description = "The endpoint hosting the website on S3"
-  value       = aws_s3_bucket_website_configuration.website.website_endpoint
+  value       = aws_s3_bucket_website_configuration.s3_bucket_website_config.website_endpoint
 }
