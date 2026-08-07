@@ -32,7 +32,7 @@ resource "aws_s3_bucket_policy" "website_bucket_policy" {
         Resource  = "${aws_s3_bucket.website_bucket.arn}/*"
         Condition = {
           StringEquals = {
-            "AWS:SourceArn" = aws_cloudfront_distribution.website_s3_distribution.arn
+            "AWS:SourceArn" = aws_cloudfront_distribution.s3_website_distribution.arn
           }
         }
       }
@@ -54,7 +54,7 @@ resource "aws_cloudfront_distribution" "s3_website_distribution" {
   origin {
     domain_name = aws_s3_bucket.website_bucket.bucket_regional_domain_name
     origin_id   = "${var.website_name}-S3-website"
-    origin_access_control_id = aws_cloudfront_origin_access_control.oac.id
+    origin_access_control_id = aws_cloudfront_origin_access_control.website_oac.id
   }
 
   enabled             = true
