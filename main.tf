@@ -23,13 +23,13 @@ resource "aws_s3_bucket_policy" "website_bucket_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid       = "AllowCloudFrontServicePrincipalReadOnly"
-        Effect    = "Allow"
+        Sid    = "AllowCloudFrontServicePrincipalReadOnly"
+        Effect = "Allow"
         Principal = {
           Service = "cloudfront.amazonaws.com"
         }
-        Action    = "s3:GetObject"
-        Resource  = "${aws_s3_bucket.website_bucket.arn}/*"
+        Action   = "s3:GetObject"
+        Resource = "${aws_s3_bucket.website_bucket.arn}/*"
         Condition = {
           StringEquals = {
             "AWS:SourceArn" = aws_cloudfront_distribution.s3_website_distribution.arn
@@ -52,8 +52,8 @@ resource "aws_s3_bucket_public_access_block" "website_public_access_block_disabl
 
 resource "aws_cloudfront_distribution" "s3_website_distribution" {
   origin {
-    domain_name = aws_s3_bucket.website_bucket.bucket_regional_domain_name
-    origin_id   = "${var.website_name}-S3-website"
+    domain_name              = aws_s3_bucket.website_bucket.bucket_regional_domain_name
+    origin_id                = "${var.website_name}-S3-website"
     origin_access_control_id = aws_cloudfront_origin_access_control.website_oac.id
   }
 
@@ -112,9 +112,9 @@ resource "aws_cloudfront_cache_policy" "cloudfront_cache_policy" {
 }
 
 resource "aws_cloudfront_origin_access_control" "website_oac" {
-  name = "${var.website_name}-oac"
-  description = "OAC for accessing ${var.website_name} S3 bucket"
-  signing_behavior = "always"
-  signing_protocol = "sigv4"
+  name                              = "${var.website_name}-oac"
+  description                       = "OAC for accessing ${var.website_name} S3 bucket"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
   origin_access_control_origin_type = "s3"
 }
