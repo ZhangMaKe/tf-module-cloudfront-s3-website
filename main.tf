@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "website_bucket" {
   bucket = var.bucket_name
 }
 
-resource "aws_s3_bucket_website_configuration" "website" {
+resource "aws_s3_bucket_website_configuration" "s3_bucket_website_config" {
   bucket = aws_s3_bucket.website_bucket.id
 
   index_document {
@@ -29,7 +29,7 @@ resource "aws_s3_bucket_policy" "website_bucket_policy" {
           Service = "cloudfront.amazonaws.com"
         }
         Action    = "s3:GetObject"
-        Resource  = "${aws_s3_bucket.website.arn}/*"
+        Resource  = "${aws_s3_bucket.website_bucket.arn}/*"
         Condition = {
           StringEquals = {
             "AWS:SourceArn" = aws_cloudfront_distribution.website_s3_distribution.arn
