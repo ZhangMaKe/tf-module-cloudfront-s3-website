@@ -118,10 +118,3 @@ resource "aws_cloudfront_origin_access_control" "website_oac" {
   signing_protocol = "sigv4"
   origin_access_control_origin_type = "s3"
 }
-
-resource "aws_acm_certificate" "domain_cert" {
-  provider          = aws.us_east_1
-  private_key       = file("private.key")
-  certificate_body  = file("domain_certificate.crt")
-  certificate_chain = file("domain_cert_auth.pem") 
-}
