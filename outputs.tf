@@ -1,7 +1,7 @@
 # outputs.tf for tf-module-cloudfront-website
 output "website_bucket_name" {
   description = "The name of the S3 bucket that hosts the website"
-  value       = aws_s3_bucket.website_bucket.bucket
+  value       = aws_s3_bucket.website_bucket.id
 }
 
 output "website_bucket_arn" {
