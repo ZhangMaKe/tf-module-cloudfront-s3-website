@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/compare/v1.1.1...v1.1.2) (2026-08-07)
+
+
+### Bug Fixes
+
+* Merge pull request [#3](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/issues/3) from ZhangMaKe/fix/resource-refs ([c316a08](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/commit/c316a0882a4c6777feb39f9516676270b0bd46cb))
+
 ## [1.1.1](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/compare/v1.1.0...v1.1.1) (2026-08-07)
 
 
