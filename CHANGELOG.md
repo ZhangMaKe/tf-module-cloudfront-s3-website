@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/compare/v1.1.0...v1.1.1) (2026-08-07)
+
+
+### Bug Fixes
+
+* Merge pull request [#2](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/issues/2) from ZhangMaKe/feat/pass-in-acm-cert ([1f7ff05](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/commit/1f7ff05467bbfd3b780e131013a21f6932fc0252))
+
 # [1.1.0](https://github.com/ZhangMaKe/tf-module-cloudfront-s3-website/compare/v1.0.0...v1.1.0) (2026-08-05)
 
 
